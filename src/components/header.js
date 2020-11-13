@@ -1,42 +1,45 @@
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ contactNumber }) => (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      // background: `rebeccapurple`,
+      background: "#F7CA18",
+      // marginBottom: `1.45rem`,
     }}
   >
     <div
       style={{
-        margin: `0 auto`,
+        margin: `auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        // padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
+      <h1 style={{ margin: "auto", display: "flex", justifyContent: "space-between",  padding: "10px 0"}}>
+        <a
+          href={`tel:+${contactNumber}`}
           style={{
             color: `white`,
             textDecoration: `none`,
+            fontSize: "14px"
           }}
         >
-          {siteTitle}
-        </Link>
+          Call Us: +{contactNumber}
+        </a>
+        <p style={{fontSize: "14px", margin: 0}}>Social Media links placeholder</p>
       </h1>
     </div>
   </header>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  contactNumber: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  contactNumber: ``,
 }
 
 export default Header
